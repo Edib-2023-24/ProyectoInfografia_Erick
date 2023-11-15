@@ -8,12 +8,116 @@
 
 /* Tipografía */
 @font-face {
-  font-family: "";
-  src: url("") format("woff2"), url("") format("woff");
+  font-family: "Eloquia";
+  src: url("../font/typekiln_-_eloquiatext-extralight-webfont.woff2")
+      format("woff2"),
+    url("../font/typekiln_-_eloquiatext-extralight-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "EloquiaBold";
+  src: url("../font/typekiln_-_eloquiadisplay-extrabold-webfont.woff2")
+      format("woff2"),
+    url("../font/typekiln_-_eloquiadisplay-extrabold-webfont.woff")
+      format("woff");
 }
 
 /* ******************************** */
 
 /* Colores */
+:root {
+  /* colors */
+  --color-texto-oscuro: #1e1e1e;
+  --color-fondo: #f5f4f5;
+  --color-fondo-card: #e9e9e9;
+  --color-rojo-marron: #b12f2f;
+  /* Tamaños */
+  --tam-borderRadius: 20px;
+  /* GRID */
+  --grid-2por4: span 2 / span 4;
+  --grid-2por6: span 2 / span 6;
+  --grid-3por4: span 3 / span 4;
+  --grid-3por6: span 3 / span 6;
+  --grid-3por8: span 3 / span 8;
+
+  /* Efectos */
+  --sombra: var(--c-gris-claro) 0px 7px 29px 0px;
+  --sombra-caja: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
 
 /* ******************************** */
+.contenedor {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  width: 1610px;
+  height: 900px;
+  background: var(--color_fondo, #f5f4f5);
+  padding: 12px;
+
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 12px;
+}
+
+main div {
+  background: var(--color_fondoCard, #e9e9e9);
+  border-radius: var(--tam-borderRadius);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Posición de todos los DIV's */
+/* Grid 2x4 */
+.caja-16gb,
+.caja-touchid,
+.caja-2tb,
+.caja-wifi6 {
+  grid-area: var(--grid-2por4);
+}
+/* Grid 2x6 */
+.caja-p3wide,
+.caja-13-3 {
+  grid-area: var(--grid-2por6);
+}
+/* Grid 3x4 */
+.caja-secure,
+.caja-activecooling {
+  grid-area: var(--grid-3por4);
+}
+/* Grid 3x6 */
+.caja-isp,
+.caja-iphoneandipad,
+.caja-studio {
+  grid-area: var(--grid-3por6);
+}
+/* Grid 3x8 */
+.caja-battery,
+.caja-2-8x,
+.caja-5x,
+.caja-11x {
+  grid-area: var(--grid-3por8);
+}
+/* Otros */
+.caja-thunderbolt {
+  grid-area: span 2 / span 8;
+}
+.caja-central {
+  grid-area: span 6 / span 16;
+}
+.caja-macos {
+  grid-area: span 3 / span 12;
+}
+.caja-imagenderecha {
+  grid-area: span 6 / span 12;
+}
+.caja-magickeyboard {
+  grid-area: span 3 / span 10;
+}
